@@ -1,0 +1,352 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bookings API (Microsoft Graph)
+  description: >-
+    Minimal OpenAPI definition for the Microsoft Bookings API exposed via
+    Microsoft Graph for managing booking businesses, services, staff members,
+    customers, custom questions, and appointments.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://graph.microsoft.com/v1.0
+    description: Microsoft Graph v1.0
+security:
+  - bearerAuth: []
+tags:
+  - name: BookingBusinesses
+  - name: Services
+  - name: StaffMembers
+  - name: Customers
+  - name: Appointments
+  - name: CustomQuestions
+  - name: Currencies
+paths:
+  /solutions/bookingBusinesses:
+    get:
+      tags: [BookingBusinesses]
+      summary: List bookingBusinesses
+      operationId: listBookingBusinesses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags: [BookingBusinesses]
+      summary: Create bookingBusiness
+      operationId: createBookingBusiness
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+  /solutions/bookingBusinesses/{id}:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags: [BookingBusinesses]
+      summary: Get bookingBusiness
+      operationId: getBookingBusiness
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+    patch:
+      tags: [BookingBusinesses]
+      summary: Update bookingBusiness
+      operationId: updateBookingBusiness
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [BookingBusinesses]
+      summary: Delete bookingBusiness
+      operationId: deleteBookingBusiness
+      responses:
+        '204':
+          description: No Content
+  /solutions/bookingBusinesses/{id}/publish:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+    post:
+      tags: [BookingBusinesses]
+      summary: Publish bookingBusiness
+      operationId: publishBookingBusiness
+      responses:
+        '204':
+          description: No Content
+  /solutions/bookingBusinesses/{id}/unpublish:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+    post:
+      tags: [BookingBusinesses]
+      summary: Unpublish bookingBusiness
+      operationId: unpublishBookingBusiness
+      responses:
+        '204':
+          description: No Content
+  /solutions/bookingBusinesses/{id}/services:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags: [Services]
+      summary: List services
+      operationId: listServices
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags: [Services]
+      summary: Create service
+      operationId: createService
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /solutions/bookingBusinesses/{id}/services/{serviceId}:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+      - in: path
+        name: serviceId
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Services]
+      summary: Get service
+      operationId: getService
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags: [Services]
+      summary: Update service
+      operationId: updateService
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags: [Services]
+      summary: Delete service
+      operationId: deleteService
+      responses:
+        '204':
+          description: No Content
+  /solutions/bookingBusinesses/{id}/staffMembers:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags: [StaffMembers]
+      summary: List staff members
+      operationId: listStaffMembers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags: [StaffMembers]
+      summary: Create staff member
+      operationId: createStaffMember
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /solutions/bookingBusinesses/{id}/customers:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags: [Customers]
+      summary: List customers
+      operationId: listCustomers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags: [Customers]
+      summary: Create customer
+      operationId: createCustomer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /solutions/bookingBusinesses/{id}/appointments:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags: [Appointments]
+      summary: List appointments
+      operationId: listAppointments
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags: [Appointments]
+      summary: Create appointment
+      operationId: createAppointment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /solutions/bookingBusinesses/{id}/appointments/{appointmentId}/cancel:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+      - in: path
+        name: appointmentId
+        required: true
+        schema: { type: string }
+    post:
+      tags: [Appointments]
+      summary: Cancel appointment
+      operationId: cancelAppointment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '204':
+          description: No Content
+  /solutions/bookingBusinesses/{id}/calendarView:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+      - in: query
+        name: start
+        schema: { type: string, format: date-time }
+      - in: query
+        name: end
+        schema: { type: string, format: date-time }
+    get:
+      tags: [Appointments]
+      summary: List bookings calendarView
+      operationId: listCalendarView
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+  /solutions/bookingBusinesses/{id}/customQuestions:
+    parameters:
+      - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags: [CustomQuestions]
+      summary: List custom questions
+      operationId: listCustomQuestions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags: [CustomQuestions]
+      summary: Create custom question
+      operationId: createCustomQuestion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /solutions/bookingCurrencies:
+    get:
+      tags: [Currencies]
+      summary: List booking currencies
+      operationId: listBookingCurrencies
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    BusinessId:
+      in: path
+      name: id
+      required: true
+      schema: { type: string }
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true

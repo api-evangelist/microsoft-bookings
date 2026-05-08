@@ -31,6 +31,8 @@ apis:
     properties:
       - type: Documentation
         url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+      - url: openapi/microsoft-bookings-openapi.yml
+        type: OpenAPI
 common:
   - type: Authentication
     url: https://learn.microsoft.com/en-us/graph/auth/
