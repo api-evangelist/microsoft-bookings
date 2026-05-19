@@ -1,0 +1,105 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Bookings API (Microsoft Graph) — StaffMembers
+  description: 'Microsoft Bookings API (Microsoft Graph) — StaffMembers. 2 operations. Lead operation: List staff members.
+    Self-contained Naftiko capability covering one Microsoft Bookings business surface.'
+  tags:
+  - Microsoft Bookings
+  - StaffMembers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_BOOKINGS_API_KEY: MICROSOFT_BOOKINGS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-bookings-staffmembers
+    baseUri: https://graph.microsoft.com/v1.0
+    description: Microsoft Bookings API (Microsoft Graph) — StaffMembers business capability. Self-contained, no shared references.
+    resources:
+    - name: solutions-bookingBusinesses-id-staffMembers
+      path: /solutions/bookingBusinesses/{id}/staffMembers
+      operations:
+      - name: liststaffmembers
+        method: GET
+        description: List staff members
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createstaffmember
+        method: POST
+        description: Create staff member
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_BOOKINGS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-bookings-staffmembers-rest
+    port: 8080
+    description: REST adapter for Microsoft Bookings API (Microsoft Graph) — StaffMembers. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/solutions/bookingbusinesses/{id}/staffmembers
+      name: solutions-bookingbusinesses-id-staffmembers
+      description: REST surface for solutions-bookingBusinesses-id-staffMembers.
+      operations:
+      - method: GET
+        name: liststaffmembers
+        description: List staff members
+        call: microsoft-bookings-staffmembers.liststaffmembers
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createstaffmember
+        description: Create staff member
+        call: microsoft-bookings-staffmembers.createstaffmember
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-bookings-staffmembers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft Bookings API (Microsoft Graph) — StaffMembers. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: list-staff-members
+      description: List staff members
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-bookings-staffmembers.liststaffmembers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-staff-member
+      description: Create staff member
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-bookings-staffmembers.createstaffmember
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

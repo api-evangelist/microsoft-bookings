@@ -1,0 +1,262 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Bookings API (Microsoft Graph) — BookingBusinesses
+  description: 'Microsoft Bookings API (Microsoft Graph) — BookingBusinesses. 7 operations. Lead operation: List bookingBusinesses.
+    Self-contained Naftiko capability covering one Microsoft Bookings business surface.'
+  tags:
+  - Microsoft Bookings
+  - BookingBusinesses
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_BOOKINGS_API_KEY: MICROSOFT_BOOKINGS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-bookings-bookingbusinesses
+    baseUri: https://graph.microsoft.com/v1.0
+    description: Microsoft Bookings API (Microsoft Graph) — BookingBusinesses business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: solutions-bookingBusinesses
+      path: /solutions/bookingBusinesses
+      operations:
+      - name: listbookingbusinesses
+        method: GET
+        description: List bookingBusinesses
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createbookingbusiness
+        method: POST
+        description: Create bookingBusiness
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: solutions-bookingBusinesses-id
+      path: /solutions/bookingBusinesses/{id}
+      operations:
+      - name: getbookingbusiness
+        method: GET
+        description: Get bookingBusiness
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatebookingbusiness
+        method: PATCH
+        description: Update bookingBusiness
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletebookingbusiness
+        method: DELETE
+        description: Delete bookingBusiness
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: solutions-bookingBusinesses-id-publish
+      path: /solutions/bookingBusinesses/{id}/publish
+      operations:
+      - name: publishbookingbusiness
+        method: POST
+        description: Publish bookingBusiness
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: solutions-bookingBusinesses-id-unpublish
+      path: /solutions/bookingBusinesses/{id}/unpublish
+      operations:
+      - name: unpublishbookingbusiness
+        method: POST
+        description: Unpublish bookingBusiness
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_BOOKINGS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-bookings-bookingbusinesses-rest
+    port: 8080
+    description: REST adapter for Microsoft Bookings API (Microsoft Graph) — BookingBusinesses. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/solutions/bookingbusinesses
+      name: solutions-bookingbusinesses
+      description: REST surface for solutions-bookingBusinesses.
+      operations:
+      - method: GET
+        name: listbookingbusinesses
+        description: List bookingBusinesses
+        call: microsoft-bookings-bookingbusinesses.listbookingbusinesses
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createbookingbusiness
+        description: Create bookingBusiness
+        call: microsoft-bookings-bookingbusinesses.createbookingbusiness
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/solutions/bookingbusinesses/{id}
+      name: solutions-bookingbusinesses-id
+      description: REST surface for solutions-bookingBusinesses-id.
+      operations:
+      - method: GET
+        name: getbookingbusiness
+        description: Get bookingBusiness
+        call: microsoft-bookings-bookingbusinesses.getbookingbusiness
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatebookingbusiness
+        description: Update bookingBusiness
+        call: microsoft-bookings-bookingbusinesses.updatebookingbusiness
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletebookingbusiness
+        description: Delete bookingBusiness
+        call: microsoft-bookings-bookingbusinesses.deletebookingbusiness
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/solutions/bookingbusinesses/{id}/publish
+      name: solutions-bookingbusinesses-id-publish
+      description: REST surface for solutions-bookingBusinesses-id-publish.
+      operations:
+      - method: POST
+        name: publishbookingbusiness
+        description: Publish bookingBusiness
+        call: microsoft-bookings-bookingbusinesses.publishbookingbusiness
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/solutions/bookingbusinesses/{id}/unpublish
+      name: solutions-bookingbusinesses-id-unpublish
+      description: REST surface for solutions-bookingBusinesses-id-unpublish.
+      operations:
+      - method: POST
+        name: unpublishbookingbusiness
+        description: Unpublish bookingBusiness
+        call: microsoft-bookings-bookingbusinesses.unpublishbookingbusiness
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-bookings-bookingbusinesses-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft Bookings API (Microsoft Graph) — BookingBusinesses. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: list-bookingbusinesses
+      description: List bookingBusinesses
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-bookings-bookingbusinesses.listbookingbusinesses
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-bookingbusiness
+      description: Create bookingBusiness
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-bookings-bookingbusinesses.createbookingbusiness
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-bookingbusiness
+      description: Get bookingBusiness
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-bookings-bookingbusinesses.getbookingbusiness
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: update-bookingbusiness
+      description: Update bookingBusiness
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-bookings-bookingbusinesses.updatebookingbusiness
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-bookingbusiness
+      description: Delete bookingBusiness
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-bookings-bookingbusinesses.deletebookingbusiness
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: publish-bookingbusiness
+      description: Publish bookingBusiness
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-bookings-bookingbusinesses.publishbookingbusiness
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: unpublish-bookingbusiness
+      description: Unpublish bookingBusiness
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-bookings-bookingbusinesses.unpublishbookingbusiness
+      outputParameters:
+      - type: object
+        mapping: $.

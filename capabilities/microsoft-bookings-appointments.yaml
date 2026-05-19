@@ -1,0 +1,179 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Microsoft Bookings API (Microsoft Graph) — Appointments
+  description: 'Microsoft Bookings API (Microsoft Graph) — Appointments. 4 operations. Lead operation: List appointments.
+    Self-contained Naftiko capability covering one Microsoft Bookings business surface.'
+  tags:
+  - Microsoft Bookings
+  - Appointments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_BOOKINGS_API_KEY: MICROSOFT_BOOKINGS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-bookings-appointments
+    baseUri: https://graph.microsoft.com/v1.0
+    description: Microsoft Bookings API (Microsoft Graph) — Appointments business capability. Self-contained, no shared references.
+    resources:
+    - name: solutions-bookingBusinesses-id-appointments
+      path: /solutions/bookingBusinesses/{id}/appointments
+      operations:
+      - name: listappointments
+        method: GET
+        description: List appointments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createappointment
+        method: POST
+        description: Create appointment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: solutions-bookingBusinesses-id-appointments-appointmentId-cancel
+      path: /solutions/bookingBusinesses/{id}/appointments/{appointmentId}/cancel
+      operations:
+      - name: cancelappointment
+        method: POST
+        description: Cancel appointment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: solutions-bookingBusinesses-id-calendarView
+      path: /solutions/bookingBusinesses/{id}/calendarView
+      operations:
+      - name: listcalendarview
+        method: GET
+        description: List bookings calendarView
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_BOOKINGS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-bookings-appointments-rest
+    port: 8080
+    description: REST adapter for Microsoft Bookings API (Microsoft Graph) — Appointments. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/solutions/bookingbusinesses/{id}/appointments
+      name: solutions-bookingbusinesses-id-appointments
+      description: REST surface for solutions-bookingBusinesses-id-appointments.
+      operations:
+      - method: GET
+        name: listappointments
+        description: List appointments
+        call: microsoft-bookings-appointments.listappointments
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createappointment
+        description: Create appointment
+        call: microsoft-bookings-appointments.createappointment
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/solutions/bookingbusinesses/{id}/appointments/{appointmentid}/cancel
+      name: solutions-bookingbusinesses-id-appointments-appointmentid-cancel
+      description: REST surface for solutions-bookingBusinesses-id-appointments-appointmentId-cancel.
+      operations:
+      - method: POST
+        name: cancelappointment
+        description: Cancel appointment
+        call: microsoft-bookings-appointments.cancelappointment
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/solutions/bookingbusinesses/{id}/calendarview
+      name: solutions-bookingbusinesses-id-calendarview
+      description: REST surface for solutions-bookingBusinesses-id-calendarView.
+      operations:
+      - method: GET
+        name: listcalendarview
+        description: List bookings calendarView
+        call: microsoft-bookings-appointments.listcalendarview
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-bookings-appointments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Microsoft Bookings API (Microsoft Graph) — Appointments. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: list-appointments
+      description: List appointments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-bookings-appointments.listappointments
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-appointment
+      description: Create appointment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-bookings-appointments.createappointment
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: cancel-appointment
+      description: Cancel appointment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: microsoft-bookings-appointments.cancelappointment
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-bookings-calendarview
+      description: List bookings calendarView
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-bookings-appointments.listcalendarview
+      outputParameters:
+      - type: object
+        mapping: $.
