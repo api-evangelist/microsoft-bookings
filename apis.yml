@@ -1,7 +1,8 @@
 aid: microsoft-bookings
 url: https://raw.githubusercontent.com/api-evangelist/microsoft-bookings/refs/heads/main/apis.yml
 name: Microsoft Bookings
-description: Microsoft Bookings provides scheduling and appointment management APIs through Microsoft Graph for businesses,
+description: >-
+  Microsoft Bookings provides scheduling and appointment management APIs through Microsoft Graph for businesses,
   services, staff, and customers.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
@@ -15,35 +16,22 @@ specificationVersion: '0.20'
 apis:
   - aid: microsoft-bookings:graph-bookings-api
     name: Microsoft Graph Bookings API
-    description: The Microsoft Graph Bookings API enables programmatic management of Microsoft Bookings businesses, services,
+    description: >-
+      The Microsoft Graph Bookings API enables programmatic management of Microsoft Bookings businesses, services,
       staff, customers, and appointments.
     image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
     humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
     baseURL: https://graph.microsoft.com/
     tags:
-    - Bookings
-    - Scheduling
-    - Appointments
-    - Microsoft Graph
+      - Bookings
+      - Scheduling
+      - Appointments
+      - Microsoft Graph
     properties:
-    - type: Documentation
-      url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
-    - url: openapi/microsoft-bookings-openapi.yml
-      type: OpenAPI
-    - type: NaftikoCapability
-      url: capabilities/microsoft-bookings-appointments.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-bookings-bookingbusinesses.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-bookings-currencies.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-bookings-customquestions.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-bookings-customers.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-bookings-services.yaml
-    - type: NaftikoCapability
-      url: capabilities/microsoft-bookings-staffmembers.yaml
+      - type: Documentation
+        url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+      - url: openapi/microsoft-bookings-openapi.yml
+        type: OpenAPI
 common:
   - type: GitHubOrganization
     url: https://github.com/microsoft
