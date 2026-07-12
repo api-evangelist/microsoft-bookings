@@ -33,6 +33,12 @@ apis:
       - url: openapi/microsoft-bookings-openapi.yml
         type: OpenAPI
 common:
+  - type: VulnerabilityDisclosure
+    url: security/microsoft-bookings-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/microsoft-bookings-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-bookings-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/microsoft
   - type: Authentication
