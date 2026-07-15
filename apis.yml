@@ -33,6 +33,8 @@ apis:
       - url: openapi/microsoft-bookings-openapi.yml
         type: OpenAPI
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-bookings-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/microsoft-bookings-vulnerability-disclosure.yml
   - type: DomainSecurity
