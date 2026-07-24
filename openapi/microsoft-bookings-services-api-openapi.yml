@@ -1,0 +1,107 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bookings API (Microsoft Graph) Appointments Services API
+  description: Minimal OpenAPI definition for the Microsoft Bookings API exposed via Microsoft Graph for managing booking businesses, services, staff members, customers, custom questions, and appointments.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: Services
+paths:
+  /solutions/bookingBusinesses/{id}/services:
+    parameters:
+    - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags:
+      - Services
+      summary: List services
+      operationId: listServices
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags:
+      - Services
+      summary: Create service
+      operationId: createService
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /solutions/bookingBusinesses/{id}/services/{serviceId}:
+    parameters:
+    - $ref: '#/components/parameters/BusinessId'
+    - in: path
+      name: serviceId
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Services
+      summary: Get service
+      operationId: getService
+      responses:
+        '200':
+          description: OK
+    patch:
+      tags:
+      - Services
+      summary: Update service
+      operationId: updateService
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Services
+      summary: Delete service
+      operationId: deleteService
+      responses:
+        '204':
+          description: No Content
+components:
+  parameters:
+    BusinessId:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

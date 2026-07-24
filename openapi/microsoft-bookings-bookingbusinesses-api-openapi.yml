@@ -1,0 +1,130 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bookings API (Microsoft Graph) Appointments BookingBusinesses API
+  description: Minimal OpenAPI definition for the Microsoft Bookings API exposed via Microsoft Graph for managing booking businesses, services, staff members, customers, custom questions, and appointments.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: BookingBusinesses
+paths:
+  /solutions/bookingBusinesses:
+    get:
+      tags:
+      - BookingBusinesses
+      summary: List bookingBusinesses
+      operationId: listBookingBusinesses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags:
+      - BookingBusinesses
+      summary: Create bookingBusiness
+      operationId: createBookingBusiness
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+  /solutions/bookingBusinesses/{id}:
+    parameters:
+    - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags:
+      - BookingBusinesses
+      summary: Get bookingBusiness
+      operationId: getBookingBusiness
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+    patch:
+      tags:
+      - BookingBusinesses
+      summary: Update bookingBusiness
+      operationId: updateBookingBusiness
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - BookingBusinesses
+      summary: Delete bookingBusiness
+      operationId: deleteBookingBusiness
+      responses:
+        '204':
+          description: No Content
+  /solutions/bookingBusinesses/{id}/publish:
+    parameters:
+    - $ref: '#/components/parameters/BusinessId'
+    post:
+      tags:
+      - BookingBusinesses
+      summary: Publish bookingBusiness
+      operationId: publishBookingBusiness
+      responses:
+        '204':
+          description: No Content
+  /solutions/bookingBusinesses/{id}/unpublish:
+    parameters:
+    - $ref: '#/components/parameters/BusinessId'
+    post:
+      tags:
+      - BookingBusinesses
+      summary: Unpublish bookingBusiness
+      operationId: unpublishBookingBusiness
+      responses:
+        '204':
+          description: No Content
+components:
+  parameters:
+    BusinessId:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

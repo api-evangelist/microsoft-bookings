@@ -1,0 +1,46 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bookings API (Microsoft Graph) Appointments Currencies API
+  description: Minimal OpenAPI definition for the Microsoft Bookings API exposed via Microsoft Graph for managing booking businesses, services, staff members, customers, custom questions, and appointments.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: Currencies
+paths:
+  /solutions/bookingCurrencies:
+    get:
+      tags:
+      - Currencies
+      summary: List booking currencies
+      operationId: listBookingCurrencies
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+components:
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,69 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bookings API (Microsoft Graph) Appointments Customers API
+  description: Minimal OpenAPI definition for the Microsoft Bookings API exposed via Microsoft Graph for managing booking businesses, services, staff members, customers, custom questions, and appointments.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: Customers
+paths:
+  /solutions/bookingBusinesses/{id}/customers:
+    parameters:
+    - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags:
+      - Customers
+      summary: List customers
+      operationId: listCustomers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags:
+      - Customers
+      summary: Create customer
+      operationId: createCustomer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+components:
+  parameters:
+    BusinessId:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

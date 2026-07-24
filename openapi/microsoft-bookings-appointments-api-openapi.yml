@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: Microsoft Bookings API (Microsoft Graph) Appointments API
+  description: Minimal OpenAPI definition for the Microsoft Bookings API exposed via Microsoft Graph for managing booking businesses, services, staff members, customers, custom questions, and appointments.
+  version: v1.0
+  x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  x-generated-by: claude-crawl-2026-05-08
+servers:
+- url: https://graph.microsoft.com/v1.0
+  description: Microsoft Graph v1.0
+security:
+- bearerAuth: []
+tags:
+- name: Appointments
+paths:
+  /solutions/bookingBusinesses/{id}/appointments:
+    parameters:
+    - $ref: '#/components/parameters/BusinessId'
+    get:
+      tags:
+      - Appointments
+      summary: List appointments
+      operationId: listAppointments
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+    post:
+      tags:
+      - Appointments
+      summary: Create appointment
+      operationId: createAppointment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '201':
+          description: Created
+  /solutions/bookingBusinesses/{id}/appointments/{appointmentId}/cancel:
+    parameters:
+    - $ref: '#/components/parameters/BusinessId'
+    - in: path
+      name: appointmentId
+      required: true
+      schema:
+        type: string
+    post:
+      tags:
+      - Appointments
+      summary: Cancel appointment
+      operationId: cancelAppointment
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericObject'
+      responses:
+        '204':
+          description: No Content
+  /solutions/bookingBusinesses/{id}/calendarView:
+    parameters:
+    - $ref: '#/components/parameters/BusinessId'
+    - in: query
+      name: start
+      schema:
+        type: string
+        format: date-time
+    - in: query
+      name: end
+      schema:
+        type: string
+        format: date-time
+    get:
+      tags:
+      - Appointments
+      summary: List bookings calendarView
+      operationId: listCalendarView
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericList'
+components:
+  parameters:
+    BusinessId:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+  schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
+    GenericList:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
