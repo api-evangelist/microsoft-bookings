@@ -4,7 +4,20 @@ name: Microsoft Bookings
 description: >-
   Microsoft Bookings provides scheduling and appointment management APIs through Microsoft Graph for businesses,
   services, staff, and customers.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-bookings.png
 tags:
   - Bookings
   - Scheduling
@@ -14,24 +27,91 @@ created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.20'
 apis:
-  - aid: microsoft-bookings:graph-bookings-api
-    name: Microsoft Graph Bookings API
-    description: >-
-      The Microsoft Graph Bookings API enables programmatic management of Microsoft Bookings businesses, services,
-      staff, customers, and appointments.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
-    baseURL: https://graph.microsoft.com/
-    tags:
-      - Bookings
-      - Scheduling
-      - Appointments
-      - Microsoft Graph
-    properties:
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
-      - url: openapi/microsoft-bookings-openapi.yml
-        type: OpenAPI
+- aid: microsoft-bookings:microsoft-bookings-appointments-api
+  name: Microsoft Bookings Appointments API
+  description: The Appointments API from Microsoft Bookings — 3 operation(s) for appointments.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  baseURL: https://graph.microsoft.com/
+  tags:
+  - Appointments
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-bookings-appointments-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+- aid: microsoft-bookings:microsoft-bookings-bookingbusinesses-api
+  name: Microsoft Bookings BookingBusinesses API
+  description: >-
+    The BookingBusinesses API from Microsoft Bookings — 4 operation(s) for bookingbusinesses.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  baseURL: https://graph.microsoft.com/
+  tags:
+  - BookingBusinesses
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-bookings-bookingbusinesses-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+- aid: microsoft-bookings:microsoft-bookings-currencies-api
+  name: Microsoft Bookings Currencies API
+  description: The Currencies API from Microsoft Bookings — 1 operation(s) for currencies.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  baseURL: https://graph.microsoft.com/
+  tags:
+  - Currencies
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-bookings-currencies-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+- aid: microsoft-bookings:microsoft-bookings-customers-api
+  name: Microsoft Bookings Customers API
+  description: The Customers API from Microsoft Bookings — 1 operation(s) for customers.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  baseURL: https://graph.microsoft.com/
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-bookings-customers-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+- aid: microsoft-bookings:microsoft-bookings-customquestions-api
+  name: Microsoft Bookings CustomQuestions API
+  description: The CustomQuestions API from Microsoft Bookings — 1 operation(s) for customquestions.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  baseURL: https://graph.microsoft.com/
+  tags:
+  - CustomQuestions
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-bookings-customquestions-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+- aid: microsoft-bookings:microsoft-bookings-services-api
+  name: Microsoft Bookings Services API
+  description: The Services API from Microsoft Bookings — 2 operation(s) for services.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  baseURL: https://graph.microsoft.com/
+  tags:
+  - Services
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-bookings-services-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+- aid: microsoft-bookings:microsoft-bookings-staffmembers-api
+  name: Microsoft Bookings StaffMembers API
+  description: The StaffMembers API from Microsoft Bookings — 1 operation(s) for staffmembers.
+  humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
+  baseURL: https://graph.microsoft.com/
+  tags:
+  - StaffMembers
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-bookings-staffmembers-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
 common:
   - type: AgenticAccess
     url: agentic-access/microsoft-bookings-agentic-access.yml
