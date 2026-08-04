@@ -1,0 +1,26 @@
+{
+  "provider": "microsoft-bookings",
+  "sources": [
+    "microsoft-bookings-appointments-api-openapi.yml",
+    "microsoft-bookings-bookingbusinesses-api-openapi.yml",
+    "microsoft-bookings-currencies-api-openapi.yml",
+    "microsoft-bookings-customers-api-openapi.yml",
+    "microsoft-bookings-customquestions-api-openapi.yml",
+    "microsoft-bookings-services-api-openapi.yml",
+    "microsoft-bookings-staffmembers-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-bookings-appointments-api-openapi.yml",
+    "microsoft-bookings-bookingbusinesses-api-openapi.yml",
+    "microsoft-bookings-currencies-api-openapi.yml",
+    "microsoft-bookings-customers-api-openapi.yml",
+    "microsoft-bookings-customquestions-api-openapi.yml",
+    "microsoft-bookings-services-api-openapi.yml",
+    "microsoft-bookings-staffmembers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
