@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Bookings API (Microsoft Graph) Appointments StaffMembers API",
+    "version": "v1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "StaffMembers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List staff members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/:id/staffMembers",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List staff members"
+        },
+        {
+          "info": {
+            "name": "Create staff member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/:id/staffMembers",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create staff member"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

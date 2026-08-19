@@ -1,0 +1,144 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Bookings API (Microsoft Graph) Appointments BookingBusinesses API",
+    "version": "v1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BookingBusinesses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List bookingBusinesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses"
+          },
+          "docs": "List bookingBusinesses"
+        },
+        {
+          "info": {
+            "name": "Create bookingBusiness",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create bookingBusiness"
+        },
+        {
+          "info": {
+            "name": "Get bookingBusiness",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get bookingBusiness"
+        },
+        {
+          "info": {
+            "name": "Update bookingBusiness",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update bookingBusiness"
+        },
+        {
+          "info": {
+            "name": "Delete bookingBusiness",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete bookingBusiness"
+        },
+        {
+          "info": {
+            "name": "Publish bookingBusiness",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/:id/publish",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Publish bookingBusiness"
+        },
+        {
+          "info": {
+            "name": "Unpublish bookingBusiness",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/:id/unpublish",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Unpublish bookingBusiness"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

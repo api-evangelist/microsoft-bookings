@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Microsoft Bookings API (Microsoft Graph) Appointments CustomQuestions API",
+    "version": "v1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CustomQuestions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List custom questions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/:id/customQuestions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List custom questions"
+        },
+        {
+          "info": {
+            "name": "Create custom question",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://graph.microsoft.com/v1.0/solutions/bookingBusinesses/:id/customQuestions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create custom question"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,118 @@
+{
+  "item": [
+    {
+      "id": "66e133a1-47ca-4eff-9c7b-dead056fe764",
+      "name": "Currencies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dcd48cfa-1abd-40b4-ae83-0db0cc3501a1",
+          "name": "List booking currencies",
+          "request": {
+            "name": "List booking currencies",
+            "description": {},
+            "url": {
+              "path": [
+                "solutions",
+                "bookingCurrencies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "236ed813-2c26-4777-9528-5f27ad02378a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solutions",
+                    "bookingCurrencies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"value\": [\n    {\n      \"key_0\": 3802,\n      \"key_1\": \"string\",\n      \"key_2\": 3923,\n      \"key_3\": 5621\n    },\n    {\n      \"key_0\": 2866.0340592777243,\n      \"key_1\": 346,\n      \"key_2\": \"string\"\n    }\n  ],\n  \"key_0\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://graph.microsoft.com/v1.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "85c258e9-5c87-48c4-a8d2-f0cfcfca662b",
+    "name": "Microsoft Bookings API (Microsoft Graph) Appointments Currencies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Minimal OpenAPI definition for the Microsoft Bookings API exposed via Microsoft Graph for managing booking businesses, services, staff members, customers, custom questions, and appointments.",
+      "type": "text/plain"
+    }
+  }
+}
