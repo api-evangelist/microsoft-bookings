@@ -58,6 +58,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
   baseURL: https://graph.microsoft.com/
   tags:
+  - Currency
+  tags_raw:
   - Currencies
   properties:
   - type: OpenAPI
@@ -82,6 +84,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
   baseURL: https://graph.microsoft.com/
   tags:
+  - Custom Questions
+  tags_raw:
   - CustomQuestions
   properties:
   - type: OpenAPI
@@ -106,6 +110,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
   baseURL: https://graph.microsoft.com/
   tags:
+  - Staff Members
+  tags_raw:
   - StaffMembers
   properties:
   - type: OpenAPI
