@@ -96,7 +96,7 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
   baseURL: https://graph.microsoft.com/
   tags:
-  - CustomQuestions
+  - Custom Questions
   tags_raw:
   - CustomQuestions
   properties:
