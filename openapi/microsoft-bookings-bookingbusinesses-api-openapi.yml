@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Microsoft Bookings API (Microsoft Graph) Appointments BookingBusinesses API
+  title: Microsoft Bookings API (Microsoft Graph) Appointments Booking Businesses API
   description: Minimal OpenAPI definition for the Microsoft Bookings API exposed via Microsoft Graph for managing booking businesses, services, staff members, customers, custom questions, and appointments.
   version: v1.0
   x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
@@ -104,17 +104,7 @@ paths:
         '204':
           description: No Content
 components:
-  parameters:
-    BusinessId:
-      in: path
-      name: id
-      required: true
-      schema:
-        type: string
   schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
     GenericList:
       type: object
       properties:
@@ -123,6 +113,16 @@ components:
           items:
             $ref: '#/components/schemas/GenericObject'
       additionalProperties: true
+    GenericObject:
+      type: object
+      additionalProperties: true
+  parameters:
+    BusinessId:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

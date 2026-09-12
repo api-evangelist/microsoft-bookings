@@ -132,6 +132,8 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
 common:
+  - type: Website
+    url: https://www.microsoft.com/
   - type: AgenticAccess
     url: agentic-access/microsoft-bookings-agentic-access.yml
   - type: VulnerabilityDisclosure
@@ -155,3 +157,5 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-parent: microsoft
+x-relationship: product
