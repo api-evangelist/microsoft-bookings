@@ -117,18 +117,16 @@ apis:
     url: openapi/microsoft-bookings-services-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
-- aid: microsoft-bookings:microsoft-bookings-staffmembers-api
-  name: Microsoft Bookings StaffMembers API
-  description: The StaffMembers API from Microsoft Bookings — 1 operation(s) for staffmembers.
+- aid: microsoft-bookings:microsoft-bookings-staff-members-api
+  name: Microsoft Bookings Staff Members API
+  description: The Staff Members API from Microsoft Bookings — 1 operation(s) for staff members.
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
   baseURL: https://graph.microsoft.com/
   tags:
-  - StaffMembers
-  tags_raw:
-  - StaffMembers
+  - Staff Members
   properties:
   - type: OpenAPI
-    url: openapi/microsoft-bookings-staffmembers-api-openapi.yml
+    url: openapi/microsoft-bookings-staff-members-api-openapi.yml
   - type: Documentation
     url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
 common:
