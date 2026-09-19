@@ -32,6 +32,11 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/microsoft-bookings.png
 tags:
+  - Booking
+  - Scheduling
+  - Appointments
+  - Microsoft Graph
+tags_raw:
   - Bookings
   - Scheduling
   - Appointments
@@ -123,6 +128,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
   baseURL: https://graph.microsoft.com/
   tags:
+  - StaffMembers
+  tags_raw:
   - Staff Members
   properties:
   - type: OpenAPI
