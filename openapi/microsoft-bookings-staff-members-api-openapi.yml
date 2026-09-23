@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Microsoft Bookings API (Microsoft Graph) Appointments Staff Members API
+  title: Microsoft Bookings API (Microsoft Graph) Staff Members API
   description: Minimal OpenAPI definition for the Microsoft Bookings API exposed via Microsoft Graph for managing booking businesses, services, staff members, customers, custom questions, and appointments.
   version: v1.0
   x-generated-from: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
@@ -11,14 +11,14 @@ servers:
 security:
 - bearerAuth: []
 tags:
-- name: StaffMembers
+- name: Staff Members
 paths:
   /solutions/bookingBusinesses/{id}/staffMembers:
     parameters:
     - $ref: '#/components/parameters/BusinessId'
     get:
       tags:
-      - StaffMembers
+      - Staff Members
       summary: List staff members
       operationId: listStaffMembers
       responses:
@@ -30,7 +30,7 @@ paths:
                 $ref: '#/components/schemas/GenericList'
     post:
       tags:
-      - StaffMembers
+      - Staff Members
       summary: Create staff member
       operationId: createStaffMember
       requestBody:
@@ -44,6 +44,9 @@ paths:
           description: Created
 components:
   schemas:
+    GenericObject:
+      type: object
+      additionalProperties: true
     GenericList:
       type: object
       properties:
@@ -51,9 +54,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GenericObject'
-      additionalProperties: true
-    GenericObject:
-      type: object
       additionalProperties: true
   parameters:
     BusinessId:

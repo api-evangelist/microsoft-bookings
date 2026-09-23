@@ -1,35 +1,35 @@
 {
   "provider": "microsoft-bookings",
   "sources": [
-    "microsoft-bookings-appointments-api-openapi.yml",
-    "microsoft-bookings-bookingbusinesses-api-openapi.yml",
-    "microsoft-bookings-currencies-api-openapi.yml",
-    "microsoft-bookings-customers-api-openapi.yml",
-    "microsoft-bookings-customquestions-api-openapi.yml",
-    "microsoft-bookings-services-api-openapi.yml",
-    "microsoft-bookings-staffmembers-api-openapi.yml"
+    "_ae-authored/microsoft-bookings-openapi.yml"
   ],
   "outputs": [
     "microsoft-bookings-appointments-api-openapi.yml",
     "microsoft-bookings-bookingbusinesses-api-openapi.yml",
     "microsoft-bookings-currencies-api-openapi.yml",
-    "microsoft-bookings-customers-api-openapi.yml",
     "microsoft-bookings-customquestions-api-openapi.yml",
+    "microsoft-bookings-customers-api-openapi.yml",
     "microsoft-bookings-services-api-openapi.yml",
     "microsoft-bookings-staffmembers-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "microsoft-bookings-appointments-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-bookings-bookingbusinesses-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-bookings-currencies-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-bookings-customers-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-bookings-customquestions-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-bookings-services-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "microsoft-bookings-staffmembers-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "microsoft-bookings-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: microsoft-bookings-staff-members-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 7 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "microsoft-bookings-appointments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-bookings-bookingbusinesses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-bookings-currencies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-bookings-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-bookings-customquestions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-bookings-services-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "microsoft-bookings-staff-members-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
