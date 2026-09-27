@@ -82,9 +82,6 @@ paths:
           description: No Content
 components:
   schemas:
-    GenericObject:
-      type: object
-      additionalProperties: true
     GenericList:
       type: object
       properties:
@@ -92,6 +89,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/GenericObject'
+      additionalProperties: true
+    GenericObject:
+      type: object
       additionalProperties: true
   parameters:
     BusinessId:
