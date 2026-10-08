@@ -135,6 +135,12 @@ apis:
   - type: Documentation
     url: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
 common:
+  - type: Plans
+    url: plans/microsoft-bookings-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/microsoft-bookings-rate-limits.yml
+  - type: FinOps
+    url: finops/microsoft-bookings-finops.yml
   - type: Website
     url: https://www.microsoft.com/
   - type: AgenticAccess
