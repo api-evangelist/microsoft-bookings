@@ -81,13 +81,6 @@ paths:
         '204':
           description: No Content
 components:
-  parameters:
-    BusinessId:
-      in: path
-      name: id
-      required: true
-      schema:
-        type: string
   schemas:
     GenericObject:
       type: object
@@ -100,6 +93,13 @@ components:
           items:
             $ref: '#/components/schemas/GenericObject'
       additionalProperties: true
+  parameters:
+    BusinessId:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http
