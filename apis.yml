@@ -128,6 +128,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview
   baseURL: https://graph.microsoft.com/
   tags:
+  - StaffMembers
+  tags_raw:
   - Staff Members
   properties:
   - type: OpenAPI
