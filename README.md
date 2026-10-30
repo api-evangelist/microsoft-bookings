@@ -1,4 +1,4 @@
-# Microsoft Bookings (microsoft-bookings)
+# Microsoft Bookings
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,53 +66,130 @@
 
 Microsoft Bookings provides scheduling and appointment management APIs through Microsoft Graph for businesses, services, staff, and customers.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/microsoft-bookings/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/microsoft-bookings/refs/heads/main/apis.yml)
+**Areas:** Booking · Scheduling · Appointments · Microsoft Graph
 
-## Tags
+## Microsoft Bookings on APIs.io
 
-- Bookings
-- Scheduling
-- Appointments
-- Microsoft Graph
+Everything profiled for Microsoft Bookings is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/microsoft-bookings/](https://apis.io/providers/microsoft-bookings/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (7)
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+- [Microsoft Bookings Appointments API](https://apis.io/apis/microsoft-bookings/microsoft-bookings-appointments-api/) — The Appointments API from Microsoft Bookings — 3 operation(s) for appointments.
+- [Microsoft Bookings BookingBusinesses API](https://apis.io/apis/microsoft-bookings/microsoft-bookings-bookingbusinesses-api/) — The BookingBusinesses API from Microsoft Bookings — 4 operation(s) for bookingbusinesses.
+- [Microsoft Bookings Currencies API](https://apis.io/apis/microsoft-bookings/microsoft-bookings-currencies-api/) — The Currencies API from Microsoft Bookings — 1 operation(s) for currencies.
+- [Microsoft Bookings Customers API](https://apis.io/apis/microsoft-bookings/microsoft-bookings-customers-api/) — The Customers API from Microsoft Bookings — 1 operation(s) for customers.
+- [Microsoft Bookings CustomQuestions API](https://apis.io/apis/microsoft-bookings/microsoft-bookings-customquestions-api/) — The CustomQuestions API from Microsoft Bookings — 1 operation(s) for customquestions.
+- [Microsoft Bookings Services API](https://apis.io/apis/microsoft-bookings/microsoft-bookings-services-api/) — The Services API from Microsoft Bookings — 2 operation(s) for services.
+- [Microsoft Bookings Staff Members API](https://apis.io/apis/microsoft-bookings/microsoft-bookings-staff-members-api/) — The Staff Members API from Microsoft Bookings — 1 operation(s) for staff members.
 
-## APIs
+### Published properties
 
-### Microsoft Graph Bookings API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Microsoft Graph Bookings API enables programmatic management of Microsoft Bookings businesses, services, staff, customers, and appointments.
+#### Agentic access (1)
 
-- **Human URL:** [https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview](https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview)
-- **Base URL:** `https://graph.microsoft.com/`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Microsoft Bookings Agentic Access](https://apis.io/agentic-access/microsoft-bookings/microsoft-bookings-agentic-access/)
 
-- Bookings
-- Scheduling
-- Appointments
-- Microsoft Graph
+#### Collections (8)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://learn.microsoft.com/en-us/graph/api/resources/booking-api-overview)
-- [OpenAPI](openapi/microsoft-bookings-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/microsoft-bookings.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/microsoft-bookings.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Microsoft Bookings API (Microsoft Graph)](https://apis.io/collections/microsoft-bookings/open-microsoft-bookings/)
+- [Microsoft Bookings API (Microsoft Graph) Appointments API](https://apis.io/collections/microsoft-bookings/open-microsoft-bookings-appointments-api/)
+- [Microsoft Bookings API (Microsoft Graph) Appointments BookingBusinesses API](https://apis.io/collections/microsoft-bookings/open-microsoft-bookings-bookingbusinesses-api/)
+- [Microsoft Bookings API (Microsoft Graph) Appointments Currencies API](https://apis.io/collections/microsoft-bookings/open-microsoft-bookings-currencies-api/)
+- [Microsoft Bookings API (Microsoft Graph) Appointments Customers API](https://apis.io/collections/microsoft-bookings/open-microsoft-bookings-customers-api/)
+- [Microsoft Bookings API (Microsoft Graph) Appointments CustomQuestions API](https://apis.io/collections/microsoft-bookings/open-microsoft-bookings-customquestions-api/)
+- [Microsoft Bookings API (Microsoft Graph) Appointments Services API](https://apis.io/collections/microsoft-bookings/open-microsoft-bookings-services-api/)
+- [Microsoft Bookings API (Microsoft Graph) Appointments StaffMembers API](https://apis.io/collections/microsoft-bookings/open-microsoft-bookings-staffmembers-api/)
 
-## Common Properties
+#### Security (3)
 
-- [GitHub Organization](https://github.com/microsoft)
-- [Authentication](https://learn.microsoft.com/en-us/graph/auth/)
-- [S D Ks](https://learn.microsoft.com/en-us/graph/sdks/sdks-overview)
-- [Terms of Service](https://www.microsoft.com/en-us/legal/terms-of-use)
-- [Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement)
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Microsoft Bookings Authentication](https://apis.io/security/microsoft-bookings/microsoft-bookings-authentication/)
+- [Microsoft Bookings Domain Security](https://apis.io/security/microsoft-bookings/microsoft-bookings-domain-security/)
+- [Microsoft Bookings Vulnerability Disclosure](https://apis.io/security/microsoft-bookings/microsoft-bookings-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Microsoft Bookings Plans Pricing](https://apis.io/plans/microsoft-bookings/microsoft-bookings-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Microsoft Bookings Rate Limits](https://apis.io/rate-limits/microsoft-bookings/microsoft-bookings-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Microsoft Bookings Finops](https://apis.io/finops/microsoft-bookings/microsoft-bookings-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.microsoft.com/)
 - [Support](https://support.microsoft.com/)
+- [Terms of service](https://www.microsoft.com/en-us/legal/terms-of-use)
+- [Privacy policy](https://privacy.microsoft.com/en-us/privacystatement)
+- [GitHub](https://github.com/microsoft)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 31.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 53.6 |
+| Contract quality | 46.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 28.9 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 25.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/microsoft-bookings/](https://apis.io/providers/microsoft-bookings/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Microsoft Bookings: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/microsoft-bookings/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
